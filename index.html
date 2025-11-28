@@ -1,66 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Weather app</title>
+		<link rel="stylesheet" href="main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Weather app</title>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<img src="assets/images/logo.svg" alt="" />
+				<div class="units">
+					<div class="gears icon"></div>
+					<div>Units</div>
+					<div class="drop icon"></div>
+				</div>
+				<div class="dropmenu hidden">
+					<div class="option switch">Switch to Imperial</div>
+					<div class="group">
+						<div class="label">Temperature</div>
+						<div class="option celsius">Celsius (°C)</div>
+						<div class="option fahrenheit">Fahrenheit (°F)</div>
+					</div>
+					<div class="group">
+						<div class="label">Wind Speed</div>
+						<div class="option km">km/h</div>
+						<div class="option mph">mph</div>
+					</div>
+					<div class="group">
+						<div class="label">Precipitation</div>
+						<div class="option mm">Millimeters (mm)</div>
+						<div class="option in">Inches (in)</div>
+					</div>
+				</div>
+			</header>
+			<div class="error">
+				<img src="assets/images/icon-error.svg" alt="error" />
+				<h1>Something went wrong</h1>
+				<p>
+					We couldn't connect to the server (API error). Please try
+					again in a few moments
+				</p>
+				<div class="retry">
+					<div class="icon"></div>
+					<div>Retry</div>
+				</div>
+			</div>
+			<div class="app">
+				<h1>How's the sky looking today?</h1>
+				<div class="search">
+					<div class="input">
+						<div class="icon"></div>
+						<input
+							type="text"
+							placeholder="Search for a place..."
+						/>
+					</div>
+					<div class="button">Search</div>
+				</div>
+				<div class="result">
+					<div class="left">
+						<div class="today">
+							<div class="info">
+								<h2 class="location">Berlin</h2>
+								<h3 class="date">2025</h3>
+							</div>
+							<div class="weather">
+								<div class="icon status"></div>
+								<h1 class="temp">20O</h1>
+							</div>
+						</div>
+						<div class="metro group">
+							<div class="card feel">
+								<div class="type">Feels like</div>
+								<div class="level">18o</div>
+							</div>
+							<div class="card humidity">
+								<div class="type">Humidity</div>
+								<div class="level">46%</div>
+							</div>
+							<div class="card wind">
+								<div class="type">Wind</div>
+								<div class="level">14 km/h</div>
+							</div>
+							<div class="card precipitation">
+								<div class="type">Precipitation</div>
+								<div class="level">00m</div>
+							</div>
+						</div>
+						<div>
+							<h3 class="forecast">Daily forecast</h3>
+							<div class="daily group">
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="day">Tue</div>
+									<div class="icon sky"></div>
+									<div class="temp">
+										<div class="min">20</div>
+										<div class="max">14</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hourly">
+						<div class="hoursdays">
+							<h3>Hourly forecast</h3>
+							<div class="currentday">
+								<div class="day">Friday</div>
+								<div class="icon"></div>
+								<div class="dropmenu hidden">
+									<div class="option">Friday</div>
+									<div class="option">Sunday</div>
+								</div>
+							</div>
+						</div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Units
-
-  Switch to Imperial/Metric
-
-  Temperature
-
-  Celsius (°C)
-  Fahrenheit (°F)
-
-  Wind Speed
-
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like
-  <!-- Insert temperature here -->
-
-  Humidity
-  <!-- Insert humidity here -->
-
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
-
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+						<div class="group">
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
 </html>
