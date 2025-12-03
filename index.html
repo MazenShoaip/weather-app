@@ -18,23 +18,27 @@
 		<div class="container">
 			<header>
 				<img src="assets/images/logo.svg" alt="" />
-				<div class="units">
+				<div class="units" tabindex="0">
 					<div class="gears icon"></div>
 					<div>Units</div>
 					<div class="drop icon"></div>
 				</div>
 				<div class="dropmenu hidden">
-					<div class="option switch">Switch to Imperial</div>
+					<div class="option switch" tabindex="0">
+						Switch to Imperial
+					</div>
 					<div class="group">
 						<div class="label">Temperature</div>
 						<div class="option celsius">Celsius (°C)</div>
 						<div class="option fahrenheit">Fahrenheit (°F)</div>
 					</div>
+					<hr />
 					<div class="group">
 						<div class="label">Wind Speed</div>
 						<div class="option km">km/h</div>
 						<div class="option mph">mph</div>
 					</div>
+					<hr />
 					<div class="group">
 						<div class="label">Precipitation</div>
 						<div class="option mm">Millimeters (mm)</div>
@@ -42,7 +46,7 @@
 					</div>
 				</div>
 			</header>
-			<div class="error">
+			<div class="error hidden">
 				<img src="assets/images/icon-error.svg" alt="error" />
 				<h1>Something went wrong</h1>
 				<p>
@@ -57,16 +61,25 @@
 			<div class="app">
 				<h1>How's the sky looking today?</h1>
 				<div class="search">
-					<div class="input">
+					<div class="input" tabindex="0">
 						<div class="icon"></div>
 						<input
 							type="text"
 							placeholder="Search for a place..."
 						/>
+						<div class="dropmenu hidden">
+							<div class="progress hidden">
+								<div class="icon"></div>
+								<div class="text">Search in progress</div>
+							</div>
+							<div class="results"></div>
+						</div>
 					</div>
-					<div class="button">Search</div>
+					<div class="button" tabindex="0">Search</div>
 				</div>
-				<div class="result">
+				<div class="noresult"><h2>No search result found</h2></div>
+
+				<div class="result hidden">
 					<div class="left">
 						<div class="today">
 							<div class="info">
@@ -77,23 +90,35 @@
 								<div class="icon status"></div>
 								<h1 class="temp">20O</h1>
 							</div>
+							<div class="load">
+								<div class="icons">
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+								<div class="text">Loading...</div>
+							</div>
 						</div>
 						<div class="metro group">
 							<div class="card feel">
 								<div class="type">Feels like</div>
 								<div class="level">18o</div>
+								<div class="loading level">_</div>
 							</div>
 							<div class="card humidity">
 								<div class="type">Humidity</div>
 								<div class="level">46%</div>
+								<div class="loading level">_</div>
 							</div>
 							<div class="card wind">
 								<div class="type">Wind</div>
 								<div class="level">14 km/h</div>
+								<div class="loading level">_</div>
 							</div>
 							<div class="card precipitation">
 								<div class="type">Precipitation</div>
 								<div class="level">00m</div>
+								<div class="loading level">_</div>
 							</div>
 						</div>
 						<div>
@@ -163,15 +188,133 @@
 							<h3>Hourly forecast</h3>
 							<div class="currentday">
 								<div class="day">Friday</div>
+								<div class="day loading">_</div>
 								<div class="icon"></div>
 								<div class="dropmenu hidden">
 									<div class="option">Friday</div>
+									<div class="option">Sunday</div>
+									<div class="option">Sunday</div>
+									<div class="option">Sunday</div>
+									<div class="option">Sunday</div>
+									<div class="option">Sunday</div>
 									<div class="option">Sunday</div>
 								</div>
 							</div>
 						</div>
 
 						<div class="group">
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
+							<div class="card">
+								<div class="time">
+									<div class="icon"></div>
+									<div class="hour">3 PM</div>
+								</div>
+								<div class="degree">20</div>
+							</div>
 							<div class="card">
 								<div class="time">
 									<div class="icon"></div>
