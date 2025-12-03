@@ -46,13 +46,6 @@ let result = document.querySelector(".result");
 let api =
 	"https://api.open-meteo.com/v1/forecast?daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,relative_humidity_2m,precipitation,apparent_temperature,weather_code,wind_speed_10m";
 
-if (localStorage.getItem("selectedCity") != null) {
-	selectedCity = JSON.parse(localStorage.getItem("selectedCity"));
-	getWeather();
-} else {
-	result.classList.add("hidden");
-}
-
 function celsius(reload = true) {
 	if (!celsiusOption.classList.contains("checked")) {
 		celsiusOption.classList.add("checked");
@@ -159,6 +152,7 @@ switchMode.addEventListener("click", modeChange);
 day.addEventListener("click", (e) => {
 	if (!dayDropmenu.contains(e.target)) dayDropmenu.classList.toggle("hidden");
 });
+
 if (localStorage.getItem("mode") !== null) {
 	mode = localStorage.getItem("mode") == "true";
 }
@@ -166,20 +160,27 @@ setMode(false);
 
 if (localStorage.getItem("temp") !== null) {
 	temp = localStorage.getItem("temp");
-	if (temp == "") celsius();
-	else fahrenheit();
+	if (temp == "") celsius(false);
+	else fahrenheit(false);
 }
 
 if (localStorage.getItem("wind") !== null) {
 	wind = localStorage.getItem("wind");
-	if (wind == "") km();
-	else mph();
+	if (wind == "") km(false);
+	else mph(false);
 }
 
 if (localStorage.getItem("prec") !== null) {
 	prec = localStorage.getItem("prec");
-	if (prec == "") mm();
-	else inc();
+	if (prec == "") mm(false);
+	else inc(false);
+}
+
+if (localStorage.getItem("selectedCity") != null) {
+	selectedCity = JSON.parse(localStorage.getItem("selectedCity"));
+	getWeather();
+} else {
+	result.classList.add("hidden");
 }
 
 async function fetchSearch(searchContent) {
